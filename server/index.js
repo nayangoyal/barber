@@ -26,7 +26,7 @@ mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=t
 
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
-  console.log(token);
+  console.log(req.cookies.token);
   if (!token) {
     return res.json("Token is missing");
   }
@@ -134,7 +134,7 @@ app.post('/Login', (req, res) => {
               maxAge: 86400000
             });
 
-            console.log(token);
+            console.log(req.cookies.token);
             return res.json(user);
           } else {
             return res.json("The password is incorrect");
