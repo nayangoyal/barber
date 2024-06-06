@@ -65,6 +65,7 @@ app.get('/Dashboard_1', (req, res) => {
 });
 
 app.get('/Dashboard_auth', verifyUser, (req, res) => {
+  console.log(req.cookies.token);
   res.json("Success");
 });
 
