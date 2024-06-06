@@ -22,7 +22,13 @@ app.use(cors(corsOptions));
 // Handle preflight requests
 app.options('*', cors(corsOptions));
 
-mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=true&w=majority&appName=barber");
+// mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=true&w=majority&appName=barber");
+mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=true&w=majority&appName=barber", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch((err) => console.log('MongoDB connection error:', err));
 
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
@@ -131,6 +137,7 @@ app.post('/Login', (req, res) => {
             const token = jwt.sign({ name: user.name, email: user.email, role: user.role }, "jwt-secret-key", { expiresIn: '1d' });
             res.cookie('token', token, {
               httpOnly: true,
+              secure: false, // Not secure since we're not using HTTPS
               maxAge: 86400000
             });
 
