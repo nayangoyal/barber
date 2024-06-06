@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 function Login() {
   const [email, setEmail] = useState()
