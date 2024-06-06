@@ -12,7 +12,7 @@ function Dashboard_auth({ disabledButtons, handleAvailableClick, handleNotAvaila
 
 
     const navigate = useNavigate();
-    axios.defaults.withCredentials = true;
+    // axios.defaults.withCredentials = true;
 
     useEffect(() => {
         axios.get('https://barber-1flp.onrender.com/Dashboard_auth')
