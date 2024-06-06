@@ -31,8 +31,9 @@ mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=t
 .catch((err) => console.log('MongoDB connection error:', err));
 
 const verifyUser = (req, res, next) => {
-  const token = req.cookies.token;
-  console.log(req.cookies.token);
+  // const token = req.cookies.token;
+  const token = localStorage.getItem('userToken');
+  console.log(token);
   if (!token) {
     return res.json("Token is missing");
   }
@@ -135,13 +136,13 @@ app.post('/Login', (req, res) => {
         bcrypt.compare(password, user.password, (err, response) => {
           if (response) {
             const token = jwt.sign({ name: user.name, email: user.email, role: user.role }, "jwt-secret-key", { expiresIn: '1d' });
-            res.cookie('token', token, {
-              httpOnly: true,
-              secure: false, // Not secure since we're not using HTTPS
-              maxAge: 86400000
-            });
-
-            console.log(req.cookies.token);
+            // res.cookie('token', token, {
+            //   httpOnly: true,
+            //   secure: false, // Not secure since we're not using HTTPS
+            //   maxAge: 86400000
+            // });
+            localStorage.setItem("userToken", JSON.stringify(token));
+            console.log(token);
             return res.json(user);
           } else {
             return res.json("The password is incorrect");
