@@ -15,7 +15,7 @@ function Dashboard({ disabledButtons,  handleNotAvailableClick}) {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://localhost:3001/Dashboard')
+        axios.get('https://barber-1flp.onrender.com/Dashboard')
             .then(res => {
                 console.log(res.data);
                 if (res.data === "Success") {
@@ -27,7 +27,7 @@ function Dashboard({ disabledButtons,  handleNotAvailableClick}) {
     }, [navigate]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/Dashboard_1')
+        axios.get('https://barber-1flp.onrender.com/Dashboard_1')
             .then(response => {
                 console.log(response.data);
                 setFet(response.data);
@@ -37,7 +37,7 @@ function Dashboard({ disabledButtons,  handleNotAvailableClick}) {
     
   const status="Pending";
     const handleClick=(timing)=>{
-        axios.post('http://localhost:3001/dashboard', {timing,status})
+        axios.post('https://barber-1flp.onrender.com/dashboard', {timing,status})
         .then(result => {console.log(result) 
             window.location.reload();
         }).catch(err => console.log(err))

@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault()
     console.log(email);
     console.log(password);
-    axios.post('http://localhost:3001/Login', { email, password })
+    axios.post('https://barber-1flp.onrender.com/Login', { email, password })
       .then(result => {
         console.log(result.data);
         
