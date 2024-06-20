@@ -32,7 +32,7 @@ mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=t
 
 const verifyUser = (req, res, next) => {
   // const token = req.cookies.token;
-  const token = req.header("token");
+  const token = req.headers.token;
   console.log("verify");
   console.log(token);
   console.log("Token from cookies:", token);
