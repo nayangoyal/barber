@@ -12,15 +12,15 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-const corsOptions = {
-  origin: 'https://barber-jet.vercel.app', // Specify the origin of your React application
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-};
+// const corsOptions = {
+//   origin: 'https://barber-jet.vercel.app', // Specify the origin of your React application
+//   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
-// Handle preflight requests
-app.options('*', cors(corsOptions));
+// // Handle preflight requests
+// app.options('*', cors(corsOptions));
 
 // mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=true&w=majority&appName=barber");
 mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=true&w=majority&appName=barber", {
