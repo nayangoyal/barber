@@ -31,7 +31,10 @@ mongoose.connect("mongodb+srv://dig:ab@barber.it6z4k9.mongodb.net/?retryWrites=t
 .catch((err) => console.log('MongoDB connection error:', err));
 
 const verifyUser = (req, res, next) => {
-  const token = req.cookies.token;
+  // const token = req.cookies.token;
+  const token = req.header("token");
+  console.log("verify");
+  console.log(token);
   console.log("Token from cookies:", token);
   if (!token) {
     return res.json("Token is missing");
