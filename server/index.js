@@ -18,8 +18,8 @@ app.use(cookieParser());
 // };
 
 app.use(cors({
-  origin: 'https://your-frontend-domain.vercel.app',
-  methods: ['GET', 'POST'],
+  origin: 'https://barber-jet.vercel.app',
+   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
 
