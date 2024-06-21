@@ -17,13 +17,13 @@ app.use(cookieParser());
 //   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 // };
 
-// {
-//   origin: 'https://barber-1flp.onrender.com',
-//    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   credentials: true
-// }
 
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://barber-jet.vercel.app',
+   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 // Handle preflight requests
 // app.options('*', cors(corsOptions));
