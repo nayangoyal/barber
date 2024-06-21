@@ -15,7 +15,7 @@ function Dashboard_auth({ disabledButtons, handleAvailableClick, handleNotAvaila
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://barber-1flp.onrender.com/Dashboard_auth')
+        axios.get('https://barber-1flp.onrender.com/Dashboard_auth')
             .then(res => {
                 console.log(res.data);
                 if (res.data === "Success") {
@@ -28,7 +28,7 @@ function Dashboard_auth({ disabledButtons, handleAvailableClick, handleNotAvaila
     }, [navigate]);
 
     useEffect(() => {
-        axios.get('http://barber-1flp.onrender.com/Dashboard_1')
+        axios.get('https://barber-1flp.onrender.com/Dashboard_1')
             .then(response => {
                 console.log(response.data);
                 setFeta(response.data);
@@ -36,7 +36,7 @@ function Dashboard_auth({ disabledButtons, handleAvailableClick, handleNotAvaila
     }, []);
 
     const auth_c = (name, time, status) => {
-        axios.post('http://barber-1flp.onrender.com/updated', { name, time, status })
+        axios.post('https://barber-1flp.onrender.com/updated', { name, time, status })
             .then(result => {
                 console.log(result);
                 window.location.reload();
@@ -44,7 +44,7 @@ function Dashboard_auth({ disabledButtons, handleAvailableClick, handleNotAvaila
     };
 
     const reject_c = (name, time) => {
-        axios.post('http://barber-1flp.onrender.com/rejected', { name, time })
+        axios.post('https://barber-1flp.onrender.com/rejected', { name, time })
             .then(result => {
                 console.log(result);
                 window.location.reload();
