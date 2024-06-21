@@ -22,12 +22,12 @@ function Login() {
         if (result) {
          
           if ( result.data.role === "admin"){
-            // navigate('/Dashboard_auth')
-            window.location.href = '/Dashboard_auth';
+            navigate('/Dashboard_auth')
+            // window.location.href = '/Dashboard_auth';
           }
           else{
-            // navigate('/Dashboard')
-            window.location.href = '/Dashboard';
+            navigate('/Dashboard')
+            // window.location.href = '/Dashboard';
           }
 
         }
