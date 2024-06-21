@@ -11,7 +11,7 @@ function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('https://barber-1flp.onrender.com/register', {name, email, password})
+        axios.post('http://barber-1flp.onrender.com/register', {name, email, password})
         .then(result => {console.log(result) 
             navigate('/Login')
         }).catch(err => console.log(err))
