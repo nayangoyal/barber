@@ -168,6 +168,6 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("server ");
 });
