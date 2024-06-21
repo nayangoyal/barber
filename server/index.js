@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-  origin: 'http://barber-jet.vercel.app',
+  origin: 'https://barber-jet.vercel.app',
    methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
