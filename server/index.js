@@ -147,7 +147,7 @@ app.post('/Login', (req, res) => {
             const token = jwt.sign({ name: user.name, email: user.email, role: user.role }, "jwt-secret-key", { expiresIn: '1d' });
             res.cookie('token', token, {
               httpOnly: true,
-              secure: false, // Set to true if using HTTPS
+              secure: true, // Set to true if using HTTPS
               maxAge: 86400000
             });
 
