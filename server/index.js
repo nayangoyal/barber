@@ -17,7 +17,11 @@ app.use(cookieParser());
 //   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 // };
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://your-frontend-domain.vercel.app',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 
 // Handle preflight requests
 // app.options('*', cors(corsOptions));
