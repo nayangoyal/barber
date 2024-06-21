@@ -18,7 +18,7 @@ app.use(cookieParser());
 // };
 
 app.use(cors({
-  origin: 'https://barber-jet.vercel.app',
+  origin: 'https://barber-1flp.onrender.com',
    methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
